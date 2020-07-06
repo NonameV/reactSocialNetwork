@@ -13,7 +13,7 @@ const Profile = (props) =>{
 	return (
 		<div className={classes.profileWrapper}>
 			<MyInfo name='User name'/>
-			<MyPosts posts={props.posts}/>
+			<MyPosts state={props.state}/>
 		</div>
 	)
 }
