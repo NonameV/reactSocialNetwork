@@ -6,15 +6,20 @@ import Profile from './components/Profile/Profile'
 import Dialogs from './components/Dialogs/Dialogs'
 import {BrowserRouter,Route} from 'react-router-dom'
 
-function App() {
+function App(props) {
+	/*let posts = [
+		{message:'hi how are you',id:1, likeCount: 12},
+		{message:'hi how are you2',id:1, likeCount: 124},
+		{message:'hi how are you3',id:1, likeCount: 412}
+	]*/
   return (
 	<BrowserRouter>
 		<div className="app-wrapper">
 			<Header />
 			<Nav />
 			<div className= 'app-wrapper-content'>
-				<Route path = '/dialogs' component = {Dialogs}/>
-				<Route path = '/profile' component = {Profile}/>
+				<Route path = '/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
+				<Route path = '/profile' render={() => <Profile posts={props.posts} />}/>
 			</div>
 			
 		</div>

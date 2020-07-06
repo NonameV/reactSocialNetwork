@@ -1,0 +1,5 @@
+bll - busines logic layer (redux), отсюда берутся данные для ui
+ui - user interface
+
+Все данные должны лежать в bll
+данные выносятся в index.js
