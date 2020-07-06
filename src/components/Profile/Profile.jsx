@@ -1,14 +1,14 @@
 import React from 'react';
 import classes from './profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
+import MyInfo from './MyInfo/MyInfo'
 
-
-const Content = () =>{
+const Profile = () =>{
 	return (
-	<div className={classes.content}>
-		<MyPosts />
-		
-	 </div>
+		<div className={classes.profileWrapper}>
+			<MyInfo name='User name'/>
+			<MyPosts />
+		</div>
 	)
 }
-export default Content
+export default Profile 
