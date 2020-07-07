@@ -6,7 +6,9 @@ let state = {
 			{message:'hi how are you',id:1, likeCount: 12},
 			{message:'hi how are you2',id:1, likeCount: 124},
 			{message:'hi how are you3',id:1, likeCount: 412}
-		]},
+		],
+			newPostText:'newpostText'
+		},
 	messagesPage:{
 		messages:[
 			{message:'hi Dima',id:1},
@@ -21,6 +23,10 @@ let state = {
 	}
 		
 }
+export let addNewPostText = (message) => {
+	state.profilePage.newPostText = message;
+	rerenderEntireTree(state);
+}
 export let addMessage = (dialogMessage) =>{
 	let newMessage = {
 		message: dialogMessage,
@@ -30,14 +36,18 @@ export let addMessage = (dialogMessage) =>{
 	rerenderEntireTree(state);
 }
 export let addPost = (postMessage) => {
+	
 	let neewPost = {
 		message: postMessage,
 		id: 5,
 		likeCount: 3
 	}
-	state.profilePage.posts.push(neewPost)
-	console.log(state.profilePage.posts);
-	rerenderEntireTree(state);
+	if(postMessage.length <= 25){
+		state.profilePage.posts.push(neewPost)
+		rerenderEntireTree(state);
+	}else{
+		alert('text length is so lonh for post')
+	}
 }
 
 
