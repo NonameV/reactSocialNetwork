@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './dialogs.module.css';
 import MessageItem from './MessageItem/MessageItem'
 import DialogItem from './DialogItem/DialogItem'
-
+import MessageInput from './MessageInput/MessageInput'
 
 
 
@@ -22,6 +22,7 @@ const Dialogs = (props) =>{
 			</div>
 			<div className={classes.messagesItemsWrapper}>
 				{messageElements}
+				<MessageInput addMessage={props.addMessage}/>
 			</div>
 		</div>
 	)

@@ -6,6 +6,7 @@ const MessageItem = (props) =>{
 		<div className={classes.messagesItem}>
 			{props.message}
 		</div>
+		
 	)
 }
 

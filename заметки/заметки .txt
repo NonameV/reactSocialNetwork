@@ -3,3 +3,5 @@ ui - user interface
 
 Все данные должны лежать в bll
 данные выносятся в index.js
+
+Мы работаем с Virtual DOM а не с DOM

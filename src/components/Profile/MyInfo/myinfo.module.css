@@ -1,6 +1,6 @@
 .myinfoWrapper{
 	display: grid;
-	grid-template-columns: 150px 300px;
+	grid-template-columns: 150px 300px auto;
 }
 .myinfoImg{
 	width:100px;

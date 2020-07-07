@@ -3,22 +3,25 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post'
 
 const MyPosts = (props) =>{
-	/*let postData = [
-		{message:'hi how are you',id:1, likeCount: 12},
-		{message:'hi how are you2',id:1, likeCount: 124},
-		{message:'hi how are you3',id:1, likeCount: 412}
-	]*/
+	
 	let posts = props.state.posts.map((post) => {return(<Post text={post.message} likesCount={post.likeCount} />)})
 	
+	let newPostElement = React.createRef();
+	
+	let addPost = () =>{
+		let text = newPostElement.current.value;
+		props.addPost(text);
+		newPostElement.current.value= '';
+	}
 	return (
 	<div className={classes.postsWraper}>
 		<h2>
 			Мои посты
 		</h2>
-		<textarea placeholder="Добавь запись">
+		<textarea ref={newPostElement} type='reset' placeholder="Добавь запись">
 			
 		</textarea>
-		<button>send</button>
+		<button onClick={addPost}>send</button>
 		{posts}
 		
 	 </div>
